@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {XYPlot, LineSeries} from 'react-vis';
 
 /**
  * Componente que representa o gráfico de estrelas.
@@ -10,7 +11,7 @@ import PropTypes from 'prop-types';
  *     Além disso, usem dos componentes que forem necessários, para issio importem o pacote junto aos "imports".
  */
 export function GraficoEstrelas(props) {
-  return <div>{'//TODO'}</div>;
+  return <div></div>;
 }
 
 // Definição dos tipos das propriedades recebidas.
