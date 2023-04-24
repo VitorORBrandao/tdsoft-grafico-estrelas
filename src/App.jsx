@@ -25,6 +25,8 @@ function App() {
   const [agrupamento, setAgrupamento] = useState('dia');
   // Inicializa a escala com a linear.
   const [escala, setEscala] = useState('linear');
+  // Inicializa o cumulativo com falso.
+  const [cumulativo, setCumulativo] = useState(false);
 
   // Função auxiliar para tratar do evento de mudança de dados.
   const onChangeDados = (event) => {
@@ -44,7 +46,12 @@ function App() {
   return (
     <div className="App">
       <div className="grafico">
-        <GraficoEstrelas estrelas={dados} agrupamento={agrupamento} escala={escala} />
+        <GraficoEstrelas
+          estrelas={dados}
+          agrupamento={agrupamento}
+          escala={escala}
+          cumulativa={cumulativo}
+        />
       </div>
       <div className="controles">
         <div className="dados">
@@ -69,6 +76,16 @@ function App() {
           <select id="escala" onChange={(event) => setEscala(event.target.value)}>
             <option value="linear">Linear</option>
             <option value="log">Logarítmica</option>
+          </select>
+        </div>
+        <div className="cumulativo">
+          <label htmlFor="cumulativo">Cumulativo: </label>
+          <select
+            id="cumulativo"
+            onChange={(event) => setCumulativo(event.target.value === 'true')}
+          >
+            <option value="false">Não</option>
+            <option value="true">Sim</option>
           </select>
         </div>
       </div>

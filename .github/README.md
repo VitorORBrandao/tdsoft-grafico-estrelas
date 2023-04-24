@@ -71,6 +71,33 @@ yarn dev
 
 O servidor deverá ser iniciado e o endereço estará no console.
 
+### Instruções adicionais para Replit
+
+Para usar o projeto no Replit, você deve primeiro:
+
+- [ ] Modificar o arquivo oculto `.replit` e substituir:
+
+```bash
+run = "npm run start"
+# port
+run = "npm run dev"
+```
+
+- [ ] Alterar o arquivo `vite.config.js` para:
+
+```javascript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: '0.0.0.0',
+  },
+});
+```
+
 ## Dicas de bibliotecas gráficas
 
 <aside>
